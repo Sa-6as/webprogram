@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info</title>
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.influensers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #a0a0a0;
+    justify-content: space-around;
+}
+
+.influensers h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.influenser {
+    background-color: #fff;
+    width: 30%;
+    text-align: center;
+    border-radius: 5px;
+    padding: 15px;
+    opacity: 0.6; 
+    transition: opacity 0.3s ease; 
+}
+.influenser:hover {
+    opacity: 1; 
+}
+.influenser img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.influenser h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.influenser p {
+    font-size: 14px;
+    color: #666;
+}
+
+.influenser button {
+    background-color: #00bcd4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.influenser button:hover {
+    background-color: #0097a7;
+}
+    </style>
+</head>
+<body>
+    <section class="influensers">
+        <h2>Катманду қаласындағы танымал турісттік орындар</h2>
+        <div class="influenser">
+            <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/10/5c/8f/5d.jpg" alt="Эверест">
+            <h3>Эверест</h3>
+            <p>Эверест тауына тур</p>
+            <button onclick="window.location.href='https://www.viator.com/tours/Kathmandu/Everest-Scenic-Flight/d5109-29135P15'">READ MORE</button>
+        </div>
+        <div class="influenser">
+            <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/2c/17/9d.jpg" alt="Храм">
+            <h3>Шіркей</h3>
+            <p>Катманду қаласының киелі шіркейі</p>
+            <button onclick="window.location.href='https://www.viator.com/tours/Kathmandu/7-Site-Heritage-Tour-of-Kathmandu-Valley/d5109-64605P15'">READ MORE</button>
+        </div>
+        <div class="influenser">
+            <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/88/7c/b0.jpg" alt="Ратуша">
+            <h3>Ратуша</h3>
+            <p>Көне ратуша</p>
+            <button onclick="window.location.href='https://www.viator.com/tours/Kathmandu/Kathmandu-City-Sightseeing-Tour/d5109-9984P2'">READ MORE</button>
+        </div>
+        <div class="influenser">
+            <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0a/8f/48/c6.jpg" alt="Көне қала">
+            <h3>Көне қала</h3>
+            <p>Көне ағаштан салынғае қала</p>
+            <button onclick="window.location.href='https://www.viator.com/tours/Kathmandu/Kathmandu-City-Sightseeing-Tour/d5109-9984P2'">READ MORE</button>
+        </div>
+        <div class="influenser">
+            <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/12/01/e9/b4.jpg" alt="Ресторан">
+            <h3>Ресторан</h3>
+            <p>Тау шыңындағы ресторан</p>
+            <button onclick="window.location.href='https://www.viator.com/tours/Kathmandu/Everest-Base-Camp-Tour-2-Days-Stay-at-Everest-view-Hotel/d5109-428717P4'">READ MORE</button>
+        </div>
+        <div class="influenser">
+            <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/74/9d/b5.jpg" alt="Канатка">
+            <h3>Канатты жол</h3>
+            <p>Тау шыңындағы саябаққа апаратын канатты жол</p>
+            <button onclick="window.location.href='https://www.viator.com/tours/Kathmandu/Half-Day-Chandragiri-Cable-Car-tour-in-Kathmandu-Nepal/d5109-7670P12'">READ MORE</button>
+        </div>
+    </section>
+</body>
+</html>

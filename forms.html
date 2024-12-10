@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form with Sidebar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #afafaf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        header {
+            width: 100%;
+            background-color: #18487b;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 5px 10px;
+            display: block;
+        }
+
+        nav ul li:hover > a {
+            background-color: #002752;
+            border-radius: 4px;
+        }
+
+        nav ul li ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #18487b;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            width: 150px;
+        }
+
+        nav ul li ul li a {
+            padding: 0px 10px;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #002752;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 80px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 20px;
+            color: #333;
+        }
+
+        label {
+            font-size: 14px;
+            margin-top: 10px;
+            display: block;
+            color: #9d9d9d;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 90%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 2px solid #000000;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #18487b;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #002752;
+        }
+
+        a {
+            color: #2a058e;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -270px; 
+            width: 250px;
+            height: 100%;
+            background-color: #18487b;
+            color: white;
+            padding: 20px;
+            transition: transform 0.3s ease; 
+            transform: translateX(0);
+        }
+
+        .sidebar:hover {
+            transform: translateX(-250px); 
+        }
+
+        .sidebar h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .open-sidebar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #18487b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .open-sidebar:hover {
+            background-color: #002752;
+        }
+
+        .share-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1000;
+}
+
+.share-button {
+    width: 50px;
+    height: 50px;
+    background-color: #1a73e8;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.share-button:hover {
+    background-color: #135bb3;
+}
+
+.share-options {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 60px;
+}
+
+.share-options a {
+    text-decoration: none;
+    color: #333;
+    margin: 5px 0;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+   
+}
+
+.share-options a:hover {
+    background-color: #f0f0f0;
+}
+
+.share-container:hover .share-options {
+    display: flex;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="...">Home</a></li>
+                <li><a href="...">Link</a></li>
+                <li><a href="...">Menu</a></li>
+                <li>
+                    <a href="...">Dropdown</a>
+                    <ul>
+                        <li><a href="...">First</a></li>
+                        <li><a href="...">Second</a></li>
+                        <li><a href="...">Third</a></li>
+                        <li><a href="...">Sidebar</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <h2>Меню сайдбара</h2>
+        <ul>
+            <li><a href="#">Басты бет</a></li>
+            <li><a href="#">Құжаттар</a></li>
+            <li><a href="#">Ақпарат</a></li>
+            <li><a href="#">Байланыс</a></li>
+        </ul>
+    </div>
+
+    <form action="/submit_booking" method="POST">
+        <h2>Book Your Flight</h2>
+
+        <label for="departure">Ұшу қаласы:</label>
+        <input type="text" id="departure" name="departure" placeholder="City or Airport" required>
+
+        <label for="arrival">Қону қаласы:</label>
+        <input type="text" id="arrival" name="arrival" placeholder="City or Airport" required>
+
+        <label for="departureDate">Ұшу күні:</label>
+        <input type="date" id="departureDate" name="departureDate" required>
+
+        <label for="returnDate">Қайту күні (егер болса):</label>
+        <input type="date" id="returnDate" name="returnDate">
+
+        <label for="passengers">Орын номері:</label>
+        <input type="number" id="passengers" name="passengers" min="1" max="10" required>
+
+        <label>Орын классы:</label>
+        <select id="flightClass" name="flightClass" required>
+            <option value="economy">Эконом</option>
+            <option value="business">Бизнес</option>
+            <option value="first">1-класс</option>
+        </select>
+
+        <label for="fullName">Аты-Жөніңіз:</label>
+        <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+
+        <label for="email">Эмайл:</label>
+        <input type="email" id="email" name="email" placeholder="johndoe@mail.com" required>
+
+        <label for="phone">Телефон номер:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
+
+        <label>
+            <input type="checkbox" id="agree" name="agree" required>
+            I agree to the <a href="/terms_of_use" target="_blank">terms of use</a>.
+        </label>
+
+        <input type="submit" value="Book Flight">
+    </form>
+    <div class="share-container">
+        <div class="share-button">🌐</div>
+        <div class="share-options">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com/intent/tweet?url=https://example.com&text=Check%20this%20out!" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/shareArticle?url=https://example.com&title=Interesting%20Content" target="_blank">LinkedIn</a>
+            <a href="https://plus.google.com/share?url=https://example.com" target="_blank">Google+</a>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Эверест тауы</title>
+    <style>
+        /* Негізгі стильдер */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f0f0f0;
+        }
+
+        header {
+            background-color: #4a90e2;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 2s ease-in;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px 0;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        section p, section ul {
+            font-size: 1.2em;
+            line-height: 1.5;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        ul {
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4a90e2;
+            color: #fff;
+        }
+
+        /* Анимациялар */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        /* Адаптивті стильдер */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav ul {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            section {
+                padding: 30px 10px;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
+
+            section p, section ul {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Эверест тауы</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Тау туралы</a></li>
+                <li><a href="#climb">Жаңа шыңға көтерілу</a></li>
+                <li><a href="#facts">Қызықты деректер</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>Эверест тауы туралы</h2>
+        <p>Эверест — жердегі ең биік тау. Ол Гималайда, Непал мен Тибет (Қытай) шекарасында орналасқан. Оның биіктігі 8848,86 метрді құрайды.</p>
+        <p>Эверест алғаш рет 1953 жылы сэр Эдмунд Хиллари мен Норге Тенцингтің көтеруімен бағындырылған.</p>
+    </section>
+    
+    <section id="climb">
+        <h2>Эверестке көтерілу</h2>
+        <p>Эверестке көтерілу — альпинистер үшін шынайы сынақ. Жылдар бойы көптеген адамдар шыңды бағындыруға тырысты, бірақ бәріне бірдей жету мүмкін болмады.</p>
+    </section>
+
+    <section id="facts">
+        <h2>Қызықты деректер</h2>
+        <ul>
+            <li>Эверест жыл сайын 4 мм өсуде.</li>
+            <li>Эверест шыңындағы ең жоғары температура -14 °C-қа жетеді.</li>
+            <li>Алғашқы сәтті көтеру 1953 жылы болды.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Эверест тауы</p>
+    </footer>
+</body>
+</html>
